@@ -36,8 +36,15 @@ public class Main {
         for (Map<String, String> movie : moviesList) {
             System.out.println(movie.get("title"));
             System.out.println(movie.get("image"));
-            System.out.println(movie.get("imDbRating"));
-            System.out.println();
+            System.out.println("\u001b[34m \u001b[43m " + movie.get("imDbRating") + " \u001b[m");
+
+            float classificacao = Float.parseFloat(movie.get("imDbRating"));
+            int qtdEstrelinha = (int) classificacao;
+
+            for (int x = 0; x < qtdEstrelinha; x++) {
+                System.out.print("\u2B50");
+            }
+            System.out.println("\n");
         }
         //
     }
